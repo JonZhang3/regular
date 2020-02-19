@@ -1,6 +1,6 @@
 /**
 @author	leeluolee
-@version	0.6.1
+@version	0.6.2
 @homepage	http://regularjs.github.io
 */
 (function webpackUniversalModuleDefinition(root, factory) {
@@ -3955,6 +3955,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 	dom.off = function(node, type, handler){
 	  var types = type.split(' ');
+	  if(!handler || !handler._events) return;
 	  var nodeId = ensureId(node, '_nid');
 
 	  types.forEach(function(type){
